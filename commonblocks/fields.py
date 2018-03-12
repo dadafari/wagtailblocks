@@ -2,9 +2,9 @@ import json
 
 from django.db import models
 
-from wagtail.wagtailcore.whitelist import attribute_rule, check_url
-from wagtail.wagtailcore.rich_text import DbWhitelister
-from wagtail.wagtailadmin.rich_text import HalloRichTextArea
+from wagtail.core.whitelist import attribute_rule, check_url
+from wagtail.core.rich_text import DbWhitelister
+from wagtail.admin.rich_text import HalloRichTextArea
 
 allow_without_attributes = attribute_rule({})
 

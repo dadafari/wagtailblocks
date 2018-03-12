@@ -4,10 +4,10 @@ from django.utils.functional import cached_property
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailcore.blocks import RichTextBlock
-from wagtail.wagtailimages.blocks import ImageChooserBlock
-from wagtail.wagtailembeds.blocks import EmbedBlock
+from wagtail.core import blocks
+from wagtail.core.blocks import RichTextBlock
+from wagtail.images.blocks import ImageChooserBlock
+from wagtail.embeds.blocks import EmbedBlock
 
 from commonblocks.fields import SimpleRichTextArea
 from commonblocks.simple_rich_text import SimpleRichText
@@ -33,7 +33,7 @@ class CommonPageChooserBlock(blocks.PageChooserBlock):
     """
     Custom PageChooser that allows filter by models classname
     """
-    def __init__(self, can_choose_root=False, page_class='Page', app='wagtail.wagtailcore.models', **kwargs):
+    def __init__(self, can_choose_root=False, page_class='Page', app='wagtail.core.models', **kwargs):
         self.page_class = page_class
         self.app = app
         super(SpecificPageChooserBlock, self).__init__(can_choose_root, **kwargs)
